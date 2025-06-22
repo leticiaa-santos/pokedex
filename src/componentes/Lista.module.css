@@ -1,0 +1,27 @@
+.conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tituloDestaque{
+    padding: 30px 0px 0px 20px;
+    text-align: center;
+    color: #000000;
+    font-size: 36px;
+}
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.filtros input, .filtros select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
