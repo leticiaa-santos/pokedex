@@ -14,31 +14,24 @@ export function Lista(){
     const [filtroCasa, setFiltroCasa] = useState('');
 
     // Estado para controlar o filme selecionado (para o modal)
-    // const [SelectedMovie, setSelectedMovie] = useState(null);
+    const [SelectedPersonagem, setSelectedPersonagem] = useState(null);
 
     // Hook useEffect é executado ao carregar o componente (lista os filmes)
     useEffect(() => {
         axios.get(`${API_URL}`)
             .then(response => {
-                console.log(response.data); // Verifica os dados no console
-                setPersonagens(response.data); // Atualiza o estado com os filmes
+                console.log(response.data); 
+                setPersonagens(response.data); 
             })
             .catch(error => {
-                console.log('erro', error); // mostra, no console, erros caso a requisição não funcione
+                console.log('erro', error); 
             });
     }, []);
-    
-    function limparTexto(texto) {
-    return texto
-        .normalize("NFD")                  // remove acentos
-        .replace(/[\u0300-\u036f]/g, "")   // remove caracteres especiais
-        .toLowerCase()
-        .trim();                           // remove espaços extras
-    }   
+
 
     const personagensFiltrados = personagens.filter(personagem => {
-    const nomePersonagem = limparTexto(personagem.name);
-    const nomeFiltro = limparTexto(filtroNome);
+    const nomePersonagem = personagem.name;
+    const nomeFiltro = filtroNome;
 
     const nome = nomeFiltro === '' || nomePersonagem.startsWith(nomeFiltro);
     const casa = filtroCasa === '' || personagem.house === filtroCasa;
@@ -47,18 +40,18 @@ export function Lista(){
     });
 
     // Abre o modal com os detalhes do filme
-    // const handleOpenModal = (movie) => {
-    //     setSelectedMovie(movie);
-    // }
+    const handleOpenModal = (personagem) => {
+        setSelectedPersonagem(personagem);
+    }
 
     // Fecha o modal
-    // const handleCloseModal = () => {
-    //     setSelectedMovie(null);
-    // }
+    const handleCloseModal = () => {
+        setSelectedPersonagem(null);
+    }
 
     return(
         <>
-            <h2 className={estilos.tituloDestaque}>Harry Potter</h2>
+            <h2 className={estilos.tituloDestaque}>Personagens Harry Potter</h2>
 
             <div className={estilos.filtros}>
                 <input 
@@ -83,18 +76,18 @@ export function Lista(){
                         <Card 
                             key={personagem.name}
                             personagem={personagem}
-                            // onOpenModal={handleOpenModal} 
+                            onOpenModal={handleOpenModal} 
                         />
                     ))}
                 </figure>
 
                 {/* Se um filme estiver selecionado, mostra o modal */}
-                {/* {SelectedMovie && (
+                {SelectedPersonagem && (
                     <Modal 
-                        movie={SelectedMovie} 
+                        personagem={SelectedPersonagem} 
                         onClose={handleCloseModal}
                     />
-                )} */}
+                )}
             </div>
         </>
     )

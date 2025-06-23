@@ -12,10 +12,10 @@
 }
 
 .modalContainer{
-    background-color: rgb(241, 236, 250);
+    background-color: #0e1a40;
     padding: 20px;
     border-radius: 15px;
-    width: 60%;
+    width: 25%;
     max-height: 95%;
     overflow: auto;
     display: flex;
@@ -25,13 +25,12 @@
 }
 
 .modalHeader{
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .modalHeader h2{
-    color: rgb(0, 0, 0.8);
+    color: #e9e9f2;
     text-align: center;
     flex-grow: 1;
     padding: 10px;
@@ -43,7 +42,7 @@
 }
 
 .imgModal{
-    width: 40%;
+    width: 80%;
     max-width: 300px;
     height: auto;
     border-radius: 15px;
@@ -53,29 +52,32 @@
 
 .movieDetails{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px 0px;
     color: #fbfbfb;
     align-items: center;
     line-height: 1.5rem;
 }
 
+.movieDetails li{
+    list-style: none;
+}
+
 button{
-    background-color: rgb(70, 70, 70);
-    border-radius: 50px;
+    background-color: #364f9e;
+    border-radius: 5px;
     color: aliceblue;
     font-size: 14px;
     border: none;
     cursor: pointer;
     display: flex;
-    width: 30px;
-    height: 30px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .containerButton{
     display: flex;
-    justify-content: flex-end;
+    height: 30px;
 }

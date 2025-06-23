@@ -1,13 +1,15 @@
 import estilos from './Modal.module.css';
 
-export function Modal({ movie, onClose }) {
 
+
+export function Modal({ personagem, onClose }) {
+    const imagem = personagem.image || 'https://via.placeholder.com/150x200?text=Sem+foto';
     // se não houver filme selecionado, não renderiza nada
-    if (!movie) {
+    if (!personagem) {
         return null;
     }
 
-    console.log(movie); // mostra o filme no console (para debug)
+    console.log(personagem); // mostra o filme no console (para debug)
 
     return (
         // fundo escurecido do modal
@@ -15,27 +17,27 @@ export function Modal({ movie, onClose }) {
             <div className={estilos.modalContainer}>
                 <div className={estilos.modalHeader}>
                     
-                    {/* botão de fechar o modal */}
-                    <div className={estilos.containerButton}>
-                        <button onClick={onClose}>x</button>
-                    </div>
+                    
 
                     {/* título do filme */}
-                    <h2>{movie.title}</h2>
+                    <h2>{personagem.name}</h2>
 
                     {/* imagem do pôster do filme */}
                     <img 
                         className={estilos.imgModal} 
-                        src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} 
+                        src={imagem} 
                     />
 
                     {/* mostra os detalhes do filme */}
                     <div>
                         <ul className={estilos.movieDetails}>
-                            <li>{`Popularidade: ${movie.popularity}`}</li>
-                            <li>{`Data de Lançamento: ${movie.release_date}`}</li>
-                            <li>{`Quantidade de votos: ${movie.vote_count}`}</li>
-                            <li>{`Sinopse: ${movie.overview}`}</li>
+                            <li>{`Casa: ${personagem.house}`}</li>
+                            <li>{`Ator: ${personagem.actor}`}</li>
+                            <li>{`Data de nascimento: ${personagem.dateOfBirth}`}</li>
+                            <li>
+                                <button className={estilos.containerButton} onClick={onClose}>Fechar</button>
+                            </li>
+                            
                         </ul>
                     </div>
 

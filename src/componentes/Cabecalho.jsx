@@ -4,7 +4,7 @@ import estilos from './Cabecalho.module.css';
 export function Cabecalho(){
     return(
         <header className={estilos.conteiner}>
-            <h1 className={estilos.titulo}>Personagens Harry Potter</h1>
+            <h1 className={estilos.titulo}>Enciclopédia Harry Potter</h1>
         </header>
     )
 
