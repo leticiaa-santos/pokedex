@@ -5,16 +5,23 @@
     justify-content: center;
 }
 
+.faixaSuperior{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .tituloDestaque{
     padding: 30px 0px 0px 20px;
     text-align: center;
     color: #5331c0;
     font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .filtros {
   display: flex;
-  gap: 1rem;
+  gap: 5rem;
   margin: 1rem 0;
   justify-content: center;
 }
@@ -24,4 +31,41 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+}
+
+.busca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.busca label {
+  margin-bottom: 8px;
+}
+
+.busca input {
+  width: 100%;
+  padding: 8px;
+}
+
+.casa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.casa label {
+  margin-bottom: 8px;
+}
+
+.casa input {
+  width: 100%;
+  padding: 8px;
+}
+
+.mensagemErro {
+  color: red;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
 }

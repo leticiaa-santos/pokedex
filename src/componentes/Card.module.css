@@ -14,6 +14,7 @@
     justify-content: center;
     background-color: #301c74;
 }
+
 .conteiner:hover{
     transform: scale(1.1);
 
@@ -21,14 +22,15 @@
 
 .titulo{
     color: #FBFBFB;
-    font-size: 19px;
+    font-size: 24px;
     line-height: 1.5rem;
     padding-bottom: 5px;
     border-radius: 10px;
 }
 
 .image{
-    height: 400px;
+    height: 300px;
+    cursor: pointer;
 }
 
 figure{

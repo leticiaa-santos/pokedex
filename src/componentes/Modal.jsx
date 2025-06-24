@@ -1,9 +1,8 @@
 import estilos from './Modal.module.css';
-
-
+import sem_foto from '../assets/sem_foto.png';
 
 export function Modal({ personagem, onClose }) {
-    const imagem = personagem.image || 'https://via.placeholder.com/150x200?text=Sem+foto';
+    const imagem = personagem.image || sem_foto;
     // se não houver filme selecionado, não renderiza nada
     if (!personagem) {
         return null;
