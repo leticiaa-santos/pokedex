@@ -1,4 +1,4 @@
-# Pokedex
+# PotterWiki
 
-Vídeo de inspiração
-https://www.youtube.com/watch?v=dqMae44pEVk
+Esse é uma enciclopédia simples com os personagens de Harry Potter
+Ela funciona consumindo a API do Harry Potter e foi desenvolvida em React!
